@@ -1,12 +1,15 @@
 let types = ../types.dhall
 
-let concatMapSep =
-      https://prelude.dhall-lang.org/v20.0.0/Text/concatMapSep.dhall
+let Prelude = ../Prelude.dhall
 
 let renderChannels
     : List Text → Text
     = λ(channels : List Text) →
-        concatMapSep "\n" Text (λ(t : Text) → "Channel ${t}") channels
+        Prelude.Text.concatMapSep
+          "\n"
+          Text
+          (λ(t : Text) → "Channel ${t}")
+          channels
 
 in  λ(group : types.Group) →
       ''
