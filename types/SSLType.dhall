@@ -1,0 +1,1 @@
+< None | STARTTLS | IMAPS >

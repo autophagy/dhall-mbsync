@@ -1,3 +1,7 @@
 { Group = ./types/Group.dhall
 , Size = ./types/Size.dhall
+, Subfolders = ./types/Subfolders.dhall
+, SSLType = ./types/SSLType.dhall
+, Create = ./types/Create.dhall
+, SSLVersion = ./types/SSLVersion.dhall
 }
