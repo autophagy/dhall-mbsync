@@ -5,4 +5,6 @@
 , Create = ./types/Create.dhall
 , SSLVersion = ./types/SSLVersion.dhall
 , MaildirStore = ./types/MaildirStore.dhall
+, SyncOperations = ./types/SyncOperations.dhall
+, Sync = ./types/Sync.dhall
 }
