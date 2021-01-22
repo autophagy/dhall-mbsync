@@ -1,3 +1,3 @@
-let Size = ./Size.dhall
+let FileSize = ./FileSize.dhall
 
-in  { fSync : Bool, fieldDelimiter : Optional Text, bufferLimit : Size }
+in  { fSync : Bool, fieldDelimiter : Optional Text, bufferLimit : FileSize }

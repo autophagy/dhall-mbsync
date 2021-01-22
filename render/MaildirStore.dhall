@@ -2,7 +2,7 @@ let Prelude = ../Prelude.dhall
 
 let types = ../types.dhall
 
-let renderSize = ./Size.dhall
+let renderFileSize = ./FileSize.dhall
 
 let renderDecision = ./Decision.dhall
 
@@ -16,7 +16,7 @@ let fields =
       λ(m : types.MaildirStore) →
         [ Some "MaildirStore ${m.name}"
         , renderOptional "Path" Text Prelude.Text.show m.path
-        , Some "MaxSize ${renderSize m.maxSize}"
+        , Some "MaxSize ${renderFileSize m.maxSize}"
         , renderOptional "MapInbox" Text Prelude.Text.show m.mapInbox
         , renderOptional "Flatten" Text Prelude.Text.show m.flatten
         , renderOptional "Trash" Text Prelude.Text.show m.trash

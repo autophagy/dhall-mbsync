@@ -4,7 +4,7 @@ let Prelude = ../Prelude.dhall
 
 let renderOptional = ./Optional.dhall
 
-let renderSize = ./Size.dhall
+let renderFileSize = ./FileSize.dhall
 
 let renderDecision = ./Decision.dhall
 
@@ -18,7 +18,7 @@ let fields =
             Text
             Prelude.Text.show
             g.fieldDelimiter
-        , Some "BufferLimit ${renderSize g.bufferLimit}"
+        , Some "BufferLimit ${renderFileSize g.bufferLimit}"
         ]
 
 in  λ(g : types.Global) → render types.Global g fields
