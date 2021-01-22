@@ -7,4 +7,5 @@
 , MaildirStore = ./types/MaildirStore.dhall
 , SyncOperations = ./types/SyncOperations.dhall
 , Sync = ./types/Sync.dhall
+, Global = ./types/Global.dhall
 }
