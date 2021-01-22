@@ -3,10 +3,10 @@ let Subfolders = ./Subfolders.dhall
 
 in
 { name : Text
-, path : Text
+, path : Optional Text
 , maxSize : Size
-, mapInbox : Text
-, flatten : Text
+, mapInbox : Optional Text
+, flatten : Optional Text
 , trash : Optional Text
 , trashNewOnly : Bool
 , trashRemoteNew : Bool

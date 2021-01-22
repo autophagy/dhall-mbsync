@@ -15,10 +15,10 @@ let render = ./Object.dhall
 let fields =
       λ(m : types.MaildirStore) →
         [ Some "MaildirStore ${m.name}"
-        , Some "Path ${m.path}"
+        , renderOptional "Path" Text Prelude.Text.show m.path
         , Some "MaxSize ${renderSize m.maxSize}"
-        , Some "MapInbox ${m.mapInbox}"
-        , Some "Flatten ${m.flatten}"
+        , renderOptional "MapInbox" Text Prelude.Text.show m.mapInbox
+        , renderOptional "Flatten" Text Prelude.Text.show m.flatten
         , renderOptional "Trash" Text Prelude.Text.show m.trash
         , Some "TrashNewOnly ${renderDecision m.trashNewOnly}"
         , Some "TrashRemoteNew ${renderDecision m.trashRemoteNew}"
