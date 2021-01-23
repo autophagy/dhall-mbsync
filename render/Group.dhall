@@ -11,7 +11,7 @@ let renderChannels
           (λ(t : Text) → "Channel ${t}")
           channels
 
-in  λ(group : types.Group) →
+in  λ(group : types.Group.Type) →
       ''
       Group ${group.name}
       ${renderChannels group.channels}
