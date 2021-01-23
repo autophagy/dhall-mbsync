@@ -1,4 +1,4 @@
-let types = ../types.dhall
+let Group = ../types/Group.dhall
 
 let Prelude = ../Prelude.dhall
 
@@ -11,7 +11,7 @@ let renderChannels
           (λ(t : Text) → "Channel ${t}")
           channels
 
-in  λ(group : types.Group.Type) →
+in  λ(group : Group.Type) →
       ''
       Group ${group.name}
       ${renderChannels group.channels}

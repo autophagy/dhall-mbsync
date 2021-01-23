@@ -1,8 +1,8 @@
-let types = ../types.dhall
+let FileSize = ../types/FileSize.dhall
 
 let Prelude = ../Prelude.dhall
 
-in  λ(size : types.FileSize) →
+in  λ(size : FileSize) →
       merge
         { Bytes = λ(i : Natural) → "${Prelude.Natural.show i}b"
         , KiBytes = λ(i : Natural) → "${Prelude.Natural.show i}k"

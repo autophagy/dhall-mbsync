@@ -1,6 +1,6 @@
-let types = ../types.dhall
+let SSLVersion = ../types/SSLVersion.dhall
 
-in  λ(version : types.SSLVersion) →
+in  λ(version : SSLVersion) →
       merge
         { SSLv3 = "SSLv3"
         , TLSv1 = "TLSv1"

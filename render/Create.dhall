@@ -1,6 +1,6 @@
-let types = ../types.dhall
+let Create = ../types/Create.dhall
 
-in  λ(x : types.Create) →
+in  λ(x : Create) →
       merge
         { None = "None", Master = "Master", Slave = "Slave", Both = "Both" }
         x

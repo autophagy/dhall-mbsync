@@ -1,6 +1,6 @@
 let Prelude = ../Prelude.dhall
 
-let types = ../types.dhall
+let IMAPStore = ../types/IMAPStore.dhall
 
 let renderFileSize = ./FileSize.dhall
 
@@ -11,7 +11,7 @@ let renderOptional = ./Optional.dhall
 let render = ./Object.dhall
 
 let fields =
-      λ(i : types.IMAPStore) →
+      λ(i : IMAPStore) →
         [ Some "MaildirStore ${i.name}"
         , renderOptional "Path" Text Prelude.Text.show i.path
         , Some "MaxSize ${renderFileSize i.maxSize}"
@@ -25,4 +25,4 @@ let fields =
         , renderOptional "PathDelimiter" Text Prelude.Text.show i.pathDelimiter
         ]
 
-in  λ(i : types.IMAPStore) → render types.IMAPStore i fields
+in  λ(i : IMAPStore) → render IMAPStore i fields

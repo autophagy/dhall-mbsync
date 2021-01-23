@@ -1,6 +1,8 @@
 let Prelude = ../Prelude.dhall
 
-let types = ../types.dhall
+let MaildirStore = ../types/MaildirStore.dhall
+
+let Subfolders = ../types/Subfolders.dhall
 
 let renderFileSize = ./FileSize.dhall
 
@@ -13,7 +15,7 @@ let renderOptional = ./Optional.dhall
 let render = ./Object.dhall
 
 let fields =
-      λ(m : types.MaildirStore) →
+      λ(m : MaildirStore) →
         [ Some "MaildirStore ${m.name}"
         , renderOptional "Path" Text Prelude.Text.show m.path
         , Some "MaxSize ${renderFileSize m.maxSize}"
@@ -25,11 +27,7 @@ let fields =
         , Some "AltMap ${renderDecision m.altMap}"
         , Some "Inbox ${m.inbox}"
         , renderOptional "InfoDelimiter" Text Prelude.Text.show m.infoDelimiter
-        , renderOptional
-            "SubFolders"
-            types.Subfolders
-            renderSubfolders
-            m.subFolders
+        , renderOptional "SubFolders" Subfolders renderSubfolders m.subFolders
         ]
 
-in  λ(m : types.MaildirStore) → render types.MaildirStore m fields
+in  λ(m : MaildirStore) → render MaildirStore m fields

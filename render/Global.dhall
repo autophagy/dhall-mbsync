@@ -1,4 +1,4 @@
-let types = ../types.dhall
+let Global = ../types/Global.dhall
 
 let Prelude = ../Prelude.dhall
 
@@ -11,7 +11,7 @@ let renderDecision = ./Decision.dhall
 let render = ./Object.dhall
 
 let fields =
-      λ(g : types.Global) →
+      λ(g : Global) →
         [ Some "FSync ${renderDecision g.fSync}"
         , renderOptional
             "FieldDelimiter"
@@ -21,4 +21,4 @@ let fields =
         , Some "BufferLimit ${renderFileSize g.bufferLimit}"
         ]
 
-in  λ(g : types.Global) → render types.Global g fields
+in  λ(g : Global) → render Global g fields

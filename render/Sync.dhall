@@ -1,4 +1,4 @@
-let types = ../types.dhall
+let SyncOperations = ../types/SyncOperations.dhall
 
 let Prelude = ../Prelude.dhall
 
@@ -7,11 +7,11 @@ in  λ(sync : types.Sync) →
         { None = "None"
         , All = "All"
         , Operations =
-            λ(i : List types.SyncOperations) →
+            λ(i : List SyncOperations) →
               Prelude.Text.concatMapSep
                 " "
-                types.SyncOperations
-                ( λ(op : types.SyncOperations) →
+                SyncOperations
+                ( λ(op : SyncOperations) →
                     merge
                       { Pull = "Pull"
                       , Push = "Push"
