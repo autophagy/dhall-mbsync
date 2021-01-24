@@ -20,30 +20,30 @@ let renderImap = ./IMAPStore.dhall
 
 let renderGroup = ./Group.dhall
 
-in \(m: Mbsync.Type) -> ''
-##################
-# Maildir Stores #
-##################
+in  λ(m : Mbsync) →
+      ''
+      ##################
+      # Maildir Stores #
+      ##################
 
-${concat "\n\n" Maildir renderMaildir m.maildirStores}
+      ${concat "\n\n" Maildir renderMaildir m.maildirStores}
 
-##################
-# IMAP4 Accounts #
-##################
+      ##################
+      # IMAP4 Accounts #
+      ##################
 
-${concat "\n\n" Account renderAccount m.accounts}
+      ${concat "\n\n" Account renderAccount m.accounts}
 
-###############
-# IMAP Stores #
-###############
+      ###############
+      # IMAP Stores #
+      ###############
 
-${concat "\n\n" IMAPStore renderImap m.imapStores}
+      ${concat "\n\n" IMAPStore renderImap m.imapStores}
 
-##########
-# Groups #
-##########
+      ##########
+      # Groups #
+      ##########
 
-${concat "\n\n" Group.Type renderGroup m.groups}
+      ${concat "\n\n" Group renderGroup m.groups}
 
-''
-
+      ''

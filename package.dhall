@@ -1,4 +1,4 @@
-{ Group = ./types/Group.dhall
+{ Group = { Type = ./types/Group.dhall, default = ./defaults/Group.dhall }
 , FileSize = ./types/FileSize.dhall
 , Subfolders = ./types/Subfolders.dhall
 , SSLType = ./types/SSLType.dhall
@@ -10,5 +10,5 @@
 , Global = ./types/Global.dhall
 , IMAPStore = ./types/IMAPStore.dhall
 , Account = ./types/Account.dhall
-, Mbsync = ./types/Mbsync.dhall
+, Mbsync = { Type = ./types/Mbsync.dhall, default = ./defaults/Mbysnc.dhall }
 }
