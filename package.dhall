@@ -10,4 +10,5 @@
 , Global = ./types/Global.dhall
 , IMAPStore = ./types/IMAPStore.dhall
 , Account = ./types/Account.dhall
+, Mbsync = ./types/Mbsync.dhall
 }
