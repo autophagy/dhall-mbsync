@@ -12,6 +12,8 @@ let IMAPStore = ../types/IMAPStore.dhall
 
 let Group = ../types/Group.dhall
 
+let renderGlobal = ./Global.dhall
+
 let renderMaildir = ./MaildirStore.dhall
 
 let renderAccount = ./Account.dhall
@@ -22,6 +24,12 @@ let renderGroup = ./Group.dhall
 
 in  λ(m : Mbsync) →
       ''
+      ###################
+      # Global Settings #
+      ###################
+
+      ${renderGlobal m.global}
+
       ##################
       # Maildir Stores #
       ##################

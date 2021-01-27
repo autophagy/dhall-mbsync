@@ -1,6 +1,8 @@
 let types =
       { Mbsync =
         { Type = ./types/Mbsync.dhall, default = ./defaults/Mbysnc.dhall }
+      , Global =
+        { Type = ./types/Global.dhall, default = ./defaults/Global.dhall }
       , MaildirStore =
         { Type = ./types/MaildirStore.dhall
         , default = ./defaults/MaildirStore.dhall
