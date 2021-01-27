@@ -1,8 +1,10 @@
 let SyncOperations = ../types/SyncOperations.dhall
 
+let Sync = ../types/Sync.dhall
+
 let Prelude = ../Prelude.dhall
 
-in  λ(sync : types.Sync) →
+in  λ(sync : Sync) →
       merge
         { None = "None"
         , All = "All"

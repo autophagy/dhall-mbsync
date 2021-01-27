@@ -11,11 +11,13 @@ let types =
         { Type = ./types/Account.dhall, default = ./defaults/Account.dhall }
       , IMAPStore =
         { Type = ./types/IMAPStore.dhall, default = ./defaults/IMAPStore.dhall }
+      , Channel =
+        { Type = ./types/Channel.dhall, default = ./defaults/Channel.dhall }
       , Group = { Type = ./types/Group.dhall, default = ./defaults/Group.dhall }
       , FileSize = ./types/FileSize.dhall
       , Subfolders = ./types/Subfolders.dhall
       , SSLType = ./types/SSLType.dhall
-      , Create = ./types/Create.dhall
+      , MasterSlave = ./types/MasterSlave.dhall
       , SSLVersion = ./types/SSLVersion.dhall
       , SyncOperations = ./types/SyncOperations.dhall
       , Sync = ./types/Sync.dhall

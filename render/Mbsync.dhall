@@ -10,6 +10,8 @@ let Account = ../types/Account.dhall
 
 let IMAPStore = ../types/IMAPStore.dhall
 
+let Channel = ../types/Channel.dhall
+
 let Group = ../types/Group.dhall
 
 let renderGlobal = ./Global.dhall
@@ -19,6 +21,8 @@ let renderMaildir = ./MaildirStore.dhall
 let renderAccount = ./Account.dhall
 
 let renderImap = ./IMAPStore.dhall
+
+let renderChannel = ./Channel.dhall
 
 let renderGroup = ./Group.dhall
 
@@ -47,6 +51,12 @@ in  λ(m : Mbsync) →
       ###############
 
       ${concat "\n\n" IMAPStore renderImap m.imapStores}
+
+      ############
+      # Channels #
+      ############
+
+      ${concat "\n\n" Channel renderChannel m.channels}
 
       ##########
       # Groups #
