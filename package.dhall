@@ -7,7 +7,8 @@ let types =
         }
       , Account =
         { Type = ./types/Account.dhall, default = ./defaults/Account.dhall }
-      , IMAPStore = ./types/IMAPStore.dhall
+      , IMAPStore =
+        { Type = ./types/IMAPStore.dhall, default = ./defaults/IMAPStore.dhall }
       , Group = { Type = ./types/Group.dhall, default = ./defaults/Group.dhall }
       , FileSize = ./types/FileSize.dhall
       , Subfolders = ./types/Subfolders.dhall
