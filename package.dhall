@@ -1,4 +1,4 @@
-let types =
+let coreTypes =
       { Mbsync =
         { Type = ./types/Mbsync.dhall, default = ./defaults/Mbysnc.dhall }
       , Global =
@@ -14,7 +14,10 @@ let types =
       , Channel =
         { Type = ./types/Channel.dhall, default = ./defaults/Channel.dhall }
       , Group = { Type = ./types/Group.dhall, default = ./defaults/Group.dhall }
-      , FileSize = ./types/FileSize.dhall
+      }
+
+let subTypes =
+      { FileSize = ./types/FileSize.dhall
       , Subfolders = ./types/Subfolders.dhall
       , SSLType = ./types/SSLType.dhall
       , MasterSlave = ./types/MasterSlave.dhall
@@ -31,4 +34,4 @@ let renderers =
       , mkGroup = ./render/Group.dhall
       }
 
-in  types ∧ renderers
+in  coreTypes ∧ subTypes ∧ renderers
