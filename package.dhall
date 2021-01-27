@@ -1,7 +1,10 @@
 let types =
       { Mbsync =
         { Type = ./types/Mbsync.dhall, default = ./defaults/Mbysnc.dhall }
-      , MaildirStore = ./types/MaildirStore.dhall
+      , MaildirStore =
+        { Type = ./types/MaildirStore.dhall
+        , default = ./defaults/MaildirStore.dhall
+        }
       , Account =
         { Type = ./types/Account.dhall, default = ./defaults/Account.dhall }
       , IMAPStore = ./types/IMAPStore.dhall
