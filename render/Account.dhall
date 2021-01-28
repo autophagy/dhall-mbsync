@@ -17,13 +17,13 @@ let render = ./Object.dhall
 let fields =
       λ(a : Account) →
         [ Some "IMAPAccount ${a.name}"
-        , renderOptional "Host" Text Prelude.Text.show a.host
-        , renderOptional "Port" Natural Prelude.Natural.show a.port
-        , Some "Timeout ${Prelude.Natural.show a.timeout}"
+        , renderOptional "Host" Text Text/show a.host
+        , renderOptional "Port" Natural Natural/show a.port
+        , Some "Timeout ${Natural/show a.timeout}"
         , Some "User ${a.user}"
-        , renderOptional "Pass" Text Prelude.Text.show a.pass
-        , renderOptional "PassCmd" Text Prelude.Text.show a.passCmd
-        , renderOptional "Tunnel" Text Prelude.Text.show a.tunnel
+        , renderOptional "Pass" Text Text/show a.pass
+        , renderOptional "PassCmd" Text Text/show a.passCmd
+        , renderOptional "Tunnel" Text Text/show a.tunnel
         , Some "AuthMechs ${a.authMechs}"
         , Some "SSLType ${renderSSLType a.sslType}"
         , Some
@@ -33,27 +33,11 @@ let fields =
                              renderSSLVersion
                              a.sslVersions} "
         , Some "SystemCertificates ${renderDecision a.systemCertificates}"
-        , renderOptional
-            "CertificateFile"
-            Text
-            Prelude.Text.show
-            a.certificateFile
-        , renderOptional
-            "ClientCertificate"
-            Text
-            Prelude.Text.show
-            a.clientCertificate
-        , renderOptional "ClientKey" Text Prelude.Text.show a.clientKey
-        , renderOptional
-            "PipelineDepth"
-            Natural
-            Prelude.Natural.show
-            a.pipelineDepth
-        , renderOptional
-            "DisableExtensions"
-            Text
-            Prelude.Text.show
-            a.disableExtensions
+        , renderOptional "CertificateFile" Text Text/show a.certificateFile
+        , renderOptional "ClientCertificate" Text Text/show a.clientCertificate
+        , renderOptional "ClientKey" Text Text/show a.clientKey
+        , renderOptional "PipelineDepth" Natural Natural/show a.pipelineDepth
+        , renderOptional "DisableExtensions" Text Text/show a.disableExtensions
         ]
 
 in  λ(a : Account) → render Account a fields

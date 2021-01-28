@@ -1,5 +1,3 @@
-let Prelude = ../Prelude.dhall
-
 let Channel = ../types/Channel.dhall
 
 let FileSize = ../types/FileSize.dhall
@@ -22,7 +20,7 @@ let fields =
         , Some "Master ${c.master}"
         , Some "Slave ${c.slave}"
         , renderOptional "MaxSize" FileSize renderFileSize c.maxSize
-        , Some "MaxMessages ${Prelude.Natural.show c.maxMessages}"
+        , Some "MaxMessages ${Natural/show c.maxMessages}"
         , Some "ExpireUnread ${renderDecision c.expireUnread}"
         , Some "Sync ${renderSync c.sync}"
         , Some "Create ${renderMasterSlave c.create}"
