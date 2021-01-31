@@ -10,7 +10,7 @@ let render = ./Object.dhall
 
 let fields =
       λ(i : IMAPStore) →
-        [ Some "MaildirStore ${i.name}"
+        [ Some "IMAPStore ${i.name}"
         , renderOptional "Path" Text Text/show i.path
         , Some "MaxSize ${renderFileSize i.maxSize}"
         , renderOptional "MapInbox" Text Text/show i.mapInbox
