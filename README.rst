@@ -6,6 +6,8 @@ This repository is a dhall package to generate configurations for the `mbsync`_ 
 synchronizing IMAP4 and Maildir mailboxes. Mostly an exercise in understanding how to build
 arbitrary configuration formats with dhall but, who knows, someone may find it useful!
 
+**Supported isync version is 1.3.x**
+
 Usage
 =====
 
