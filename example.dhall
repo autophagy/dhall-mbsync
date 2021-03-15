@@ -42,10 +42,10 @@ let channels =
         ( λ(name : Text) →
             mbsync.Channel::{
             , name = "example-${name}"
-            , master = ":example-remote:${name}"
-            , slave = ":example-local:${name}"
-            , create = mbsync.MasterSlave.Both
-            , expunge = mbsync.MasterSlave.Both
+            , far = ":example-remote:${name}"
+            , near = ":example-local:${name}"
+            , create = mbsync.FarNear.Both
+            , expunge = mbsync.FarNear.Both
             }
         )
         channelNames

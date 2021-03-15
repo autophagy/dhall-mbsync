@@ -1,1 +1,0 @@
-< None | Master | Slave | Both >

@@ -10,22 +10,22 @@ let renderOptional = ./Optional.dhall
 
 let renderSync = ./Sync.dhall
 
-let renderMasterSlave = ./MasterSlave.dhall
+let renderFarNear = ./FarNear.dhall
 
 let render = ./Object.dhall
 
 let fields =
       λ(c : Channel) →
         [ Some "Channel ${c.name}"
-        , Some "Master ${c.master}"
-        , Some "Slave ${c.slave}"
+        , Some "Far ${c.far}"
+        , Some "Near ${c.near}"
         , renderOptional "MaxSize" FileSize renderFileSize c.maxSize
         , Some "MaxMessages ${Natural/show c.maxMessages}"
         , Some "ExpireUnread ${renderDecision c.expireUnread}"
         , Some "Sync ${renderSync c.sync}"
-        , Some "Create ${renderMasterSlave c.create}"
-        , Some "Remove ${renderMasterSlave c.remove}"
-        , Some "Expunge ${renderMasterSlave c.expunge}"
+        , Some "Create ${renderFarNear c.create}"
+        , Some "Remove ${renderFarNear c.remove}"
+        , Some "Expunge ${renderFarNear c.expunge}"
         , Some "SyncState ${c.syncState}"
         ]
 

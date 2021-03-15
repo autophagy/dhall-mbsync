@@ -2,18 +2,18 @@ let FileSize = ./FileSize.dhall
 
 let Sync = ./Sync.dhall
 
-let MasterSlave = ./MasterSlave.dhall
+let FarNear = ./FarNear.dhall
 
 in  { name : Text
-    , master : Text
-    , slave : Text
+    , far : Text
+    , near : Text
     , patterns : List Text
     , maxSize : Optional FileSize
     , maxMessages : Natural
     , expireUnread : Bool
     , sync : Sync
-    , create : MasterSlave
-    , remove : MasterSlave
-    , expunge : MasterSlave
+    , create : FarNear
+    , remove : FarNear
+    , expunge : FarNear
     , syncState : Text
     }
